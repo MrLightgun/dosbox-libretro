@@ -552,13 +552,13 @@ void MAPPER_Run(bool pressed)
         int16_t emulated_mouseX = input_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_X);
         int16_t emulated_mouseY = input_cb(0, RETRO_DEVICE_ANALOG, RETRO_DEVICE_INDEX_ANALOG_RIGHT, RETRO_DEVICE_ID_ANALOG_Y);
 
-       if (abs(emulated_mouseX) <= deadzone * 32768 / 100)
-            emulated_mouseX = 0;
-       if (abs(emulated_mouseY) <= deadzone * 32768 / 100)
-            emulated_mouseY = 0;
+       //if (abs(emulated_mouseX) <= deadzone * 32768 / 100)
+         //   emulated_mouseX = 0;
+       //if (abs(emulated_mouseY) <= deadzone * 32768 / 100)
+         //   emulated_mouseY = 0;
 
-       emulated_mouseX = emulated_mouseX * speed / 32768;
-       emulated_mouseY = emulated_mouseY * speed / 32768;
+       //emulated_mouseX = emulated_mouseX * speed / 32768;
+       //emulated_mouseY = emulated_mouseY * speed / 32768;
 
         Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
     }
