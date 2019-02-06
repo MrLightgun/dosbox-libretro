@@ -558,7 +558,7 @@ void MAPPER_Run(bool pressed)
          //   emulated_mouseY = 0;
 
        emulated_mouseX = (emulated_mouseX / 100) + 327;
-       emulated_mouseY = (emulated_mouseY / 100);
+       emulated_mouseY = (emulated_mouseY / 200) + 164;
 
         Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
     }
