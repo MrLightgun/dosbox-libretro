@@ -557,8 +557,8 @@ void MAPPER_Run(bool pressed)
        //if (abs(emulated_mouseY) <= deadzone * 32768 / 100)
          //   emulated_mouseY = 0;
 
-       //emulated_mouseX = emulated_mouseX * speed / 32768;
-       //emulated_mouseY = emulated_mouseY * speed / 32768;
+       emulated_mouseX = emulated_mouseX / 100;
+       emulated_mouseY = (emulated_mouseY / 100) + 300;
 
         Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
     }
