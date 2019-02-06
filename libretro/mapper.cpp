@@ -557,6 +557,28 @@ void MAPPER_Run(bool pressed)
        //if (abs(emulated_mouseY) <= deadzone * 32768 / 100)
          //   emulated_mouseY = 0;
 
+        
+        //if (input_state_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT)){
+		//		in_keystate[i] |= (1 << DKEY_CIRCLE);
+		//	}
+			
+			// A
+		//	if (input_state_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT)){
+		//		in_keystate[i] |= (1 << DKEY_START);
+		//	}
+			
+			// B
+		//	if (input_state_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_MIDDLE)){
+		//		in_keystate[i] |= (1 << DKEY_TRIANGLE);
+		//	}
+			
+			//The 1 is hardcoded instead of i to prevent the overlay mouse button libretro crash bug
+			//int gunx = (input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X)  / 255) + 128;
+			//int guny = (input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y)  / 255) + 128;
+			emulated_mouseX = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);
+            emulated_mouseX = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y);
+        
+        
        emulated_mouseX = (emulated_mouseX / 100) + 327;
        emulated_mouseY = (emulated_mouseY / 300) + 100;
 
