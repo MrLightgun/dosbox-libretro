@@ -471,7 +471,7 @@ void Mouse_CursorMoved(float xrel,float yrel,float x,float y,bool emulate) {
 	else if (mouse.mickey_y <= -32769.0) mouse.mickey_y += 65536.0;
 	if (emulate) {
 		//mouse.x += dx;
-		mouse.x = 16384;
+		mouse.x = 10000;
 		mouse.y += dy;
 	} else {
 		if (CurMode->type == M_TEXT) {
