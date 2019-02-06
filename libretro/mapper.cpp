@@ -575,8 +575,8 @@ void MAPPER_Run(bool pressed)
 			//The 1 is hardcoded instead of i to prevent the overlay mouse button libretro crash bug
 			//int gunx = (input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X)  / 255) + 128;
 			//int guny = (input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y)  / 255) + 128;
-			emulated_mouseX = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);
-            emulated_mouseX = input_state_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y);
+			emulated_mouseX = input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_X);
+            emulated_mouseX = input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_Y);
         
         
        emulated_mouseX = (emulated_mouseX / 100) + 327;
