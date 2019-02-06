@@ -472,7 +472,7 @@ void Mouse_CursorMoved(float xrel,float yrel,float x,float y,bool emulate) {
 	if (emulate) {
 		//mouse.x += dx;
 		mouse.x = xrel;
-		mouse.y = 200;
+		mouse.y = yrel;
 	} else {
 		if (CurMode->type == M_TEXT) {
 			mouse.x = x*real_readw(BIOSMEM_SEG,BIOSMEM_NB_COLS)*8;
