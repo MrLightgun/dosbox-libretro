@@ -257,16 +257,20 @@ void MAPPER_Init()
     environ_cb(RETRO_ENVIRONMENT_SET_KEYBOARD_CALLBACK, &callback);
 
     inputList.clear();
+    inputList.push_back(new MouseButton(RDID(MOUSE_LEFT), 0));
+    inputList.push_back(new MouseButton(RDID(MOUSE_RIGHT), 1));
+    inputList.push_back(new MouseButton(RDID(MOUSE_MIDDLE), 2));
+	
 	//input_state_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT)
-    inputList.push_back(new MouseButton(input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT), 0));
-    inputList.push_back(new MouseButton(input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT), 1));
-    inputList.push_back(new MouseButton(input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_MIDDLE), 2));
+    //inputList.push_back(new MouseButton(input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT), 0));
+    //inputList.push_back(new MouseButton(input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT), 1));
+    //inputList.push_back(new MouseButton(input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_MIDDLE), 2));
 
-    //if (emulated_mouse)
-    //{
-      //  inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_R2), 0));
-        //inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_L2), 1));
-    //}
+    if (emulated_mouse)
+    {
+        inputList.push_back(new EmulatedMouseButton(0, RDID(MOUSE_LEFT), 0));
+        inputList.push_back(new EmulatedMouseButton(0, RDID(MOUSE_RIGHT), 1));
+    }
 
     struct retro_input_descriptor desc[64];
 
