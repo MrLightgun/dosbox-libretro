@@ -268,8 +268,8 @@ void MAPPER_Init()
 
     if (emulated_mouse)
     {
-        inputList.push_back(new EmulatedMouseButton(0, RDID(MOUSE_LEFT), 0));
-        inputList.push_back(new EmulatedMouseButton(0, RDID(MOUSE_RIGHT), 1));
+        inputList.push_back(new EmulatedMouseButton(0, input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT), 0));
+        inputList.push_back(new EmulatedMouseButton(0, input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT), 1));
 	//inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_R2), 0));
         //inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_L2), 1));
     }
