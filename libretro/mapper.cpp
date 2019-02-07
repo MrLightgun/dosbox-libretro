@@ -270,9 +270,9 @@ void MAPPER_Init()
     {
 	
 		//input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED)
-        inputList.push_back(new EmulatedMouseButton(0,input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED), 0));
+        //inputList.push_back(new EmulatedMouseButton(0,input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED), 0));
         //inputList.push_back(new EmulatedMouseButton(0, input_cb(1, RETRO_DEVICE_POINTER, 0, RETRO_DEVICE_ID_POINTER_PRESSED), 1));
-	//inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_R2), 0));
+	inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_R2), 0));
         inputList.push_back(new EmulatedMouseButton(0, RDID(JOYPAD_L2), 1));
     }
 
