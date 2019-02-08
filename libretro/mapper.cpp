@@ -594,8 +594,10 @@ void MAPPER_Run(bool pressed)
         
        emulated_mouseX = (emulated_mouseX / 100) + 327;
        emulated_mouseY = (emulated_mouseY / 300) + 100;
-
-        Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
+	if (input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT) || input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT))
+	{
+        	Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
+	}
     }
     if(mouseX || mouseY)
         Mouse_CursorMoved(mouseX, mouseY, 0, 0, true);
