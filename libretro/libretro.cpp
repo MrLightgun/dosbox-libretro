@@ -142,6 +142,7 @@ struct retro_variable vars[] = {
     { "dosbox_machine_type",          "Emulated machine; svga_s3|svga_et3000|svga_et4000|svga_paradise|vesa_nolfb|vesa_oldvbe|hercules|cga|tandy|pcjr|ega|vgaonly" },
     { "dosbox_scaler",                "Scaler; none|normal2x|normal3x" },
     { "dosbox_emulated_mouse",        "Gamepad emulated mouse; enable|disable" },
+    { "dosbox_mouse_move_on_click",        "Move mouse only on click; disable|enable" },
 #if defined(C_DYNREC) || defined(C_DYNAMIC_X86)
     { "dosbox_cpu_core",              "CPU core; auto|dynamic|normal|simple" },
 #else
@@ -165,6 +166,7 @@ struct retro_variable vars_advanced[] = {
     { "dosbox_machine_type",          "Emulated machine; svga_s3|svga_et3000|svga_et4000|svga_paradise|vesa_nolfb|vesa_oldvbe|hercules|cga|tandy|pcjr|ega|vgaonly" },
     { "dosbox_scaler",                "Scaler; none|normal2x|normal3x" },
     { "dosbox_emulated_mouse",        "Gamepad emulated mouse; enable|disable" },
+    { "dosbox_mouse_move_on_click",        "Move mouse only on click; disable|enable" },
 #if defined(C_DYNREC) || defined(C_DYNAMIC_X86)
     { "dosbox_cpu_core",              "CPU core; auto|dynamic|normal|simple" },
 #else
