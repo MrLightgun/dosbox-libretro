@@ -594,10 +594,25 @@ void MAPPER_Run(bool pressed)
         
        emulated_mouseX = (emulated_mouseX / 100) + 327;
        emulated_mouseY = (emulated_mouseY / 300) + 100;
-	if (input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT) || input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT))
+	    
+    struct retro_variable var = {0};
+    var.key = "dosbox_mouse_move_on_click";
+    var.value = NULL;
+    if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+    {
+        if (strcmp(var.value, "disable") == 0)
 	{
-        	Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
+		Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
 	}
+        else
+	{
+            if (input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_LEFT) || input_cb(1, RETRO_DEVICE_MOUSE, 0, RETRO_DEVICE_ID_MOUSE_RIGHT))
+		{
+        		Mouse_CursorMoved(emulated_mouseX, emulated_mouseY, 0, 0, true);
+		}
+	}
+    }
+	
     }
     if(mouseX || mouseY)
         Mouse_CursorMoved(mouseX, mouseY, 0, 0, true);
